@@ -1,11 +1,13 @@
-const nameInput = document.querySelector("#name-input");
-const nameOutput = document.querySelector("#name-output");
-nameInput.addEventListener("input", OnTextInput);
-function OnTextInput() {
-  let name = nameInput.value.trim();
-  if (name === "") {
-    nameOutput.textContent = "Anonymous";
-  } else {
-    nameOutput.textContent = nameInput.value;
-  }
+const input = document.querySelector("#name-input");
+const nameLabel = document.querySelector("#name-output");
+
+input.addEventListener("input", onInputChange);
+
+function onInputChange() {
+    let name = input.value.trim();
+    if (name === " ") {
+        nameLabel.textContent = "Anonymous";
+    } else {
+         nameLabel.textContent = input.value;
+    }
 }
